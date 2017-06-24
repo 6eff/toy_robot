@@ -7,8 +7,14 @@ class Toyrobot
     @facing = ["south","west","north","east"]
   end
 
-  def place coordinates
+  def place coordinates, tabletop
     @coordinates.replace coordinates
+    if on_tabletop? tabletop
+      @coordinates
+    else
+      error
+      @coordinates = []
+    end
   end
 
   def on_tabletop? tabletop
