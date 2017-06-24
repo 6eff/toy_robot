@@ -7,12 +7,16 @@ class Toyrobot
     @facing = ["south","west","north","east"]
   end
 
+  def place_error tabletop
+    print "Please place you robot on tabletop of #{tabletop[:x_axe].last} X #{tabletop[:y_axe].last} units"
+  end
+
   def place coordinates, tabletop
     @coordinates.replace coordinates
     if on_tabletop? tabletop
       @coordinates
     else
-      error
+      place_error tabletop
       @coordinates = []
     end
   end
