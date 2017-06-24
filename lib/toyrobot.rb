@@ -26,4 +26,45 @@ class Toyrobot
     end
   end
 
+  def error
+    print "Make a turn, you've reached the edge"
+  end
+
+  def move tabletop
+    case @coordinates[2]
+      when "north"
+        @coordinates[1] += 1
+        if on_tabletop? tabletop
+          @coordinates
+        else
+          error
+          @coordinates[1] -= 1
+        end
+      when "south"
+        @coordinates[1] -= 1
+        if on_tabletop? tabletop
+          @coordinates
+        else
+         error
+         @coordinates[1] += 1
+        end
+      when "east"
+        @coordinates[0] += 1
+        if on_tabletop? tabletop
+          @coordinates
+        else
+         error
+         @coordinates[0] -= 1
+        end
+      when "west"
+        @coordinates[0] -= 1
+        if on_tabletop? tabletop
+          @coordinates
+        else
+          error
+          @coordinates[0] += 1
+        end
+    end
+  end
+
 end
