@@ -11,6 +11,8 @@ The application is a simulation of a toy robot moving on a square tabletop. Ther
 * enjoy
 * to check tests passing run *rspec* in your terminal
 
+### Commands
+
 - PLACE will put the toy robot on the table in position `X`,`Y` and facing `NORTH`, `SOUTH`, `EAST` or
 `WEST`.
 - `MOVE` will move the toy robot one unit forward in the direction it is currently facing.
