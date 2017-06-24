@@ -9,6 +9,7 @@ The application is a simulation of a toy robot moving on a square tabletop. Ther
 * run *bundle* (gem install bundle, if no bundle installed)
 * run *ruby lib/game.rb*
 * enjoy
+* to check tests passing run *rspec* in your terminal
 
 - PLACE will put the toy robot on the table in position `X`,`Y` and facing `NORTH`, `SOUTH`, `EAST` or
 `WEST`.
