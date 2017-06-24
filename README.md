@@ -7,7 +7,7 @@ The application is a simulation of a toy robot moving on a square tabletop. Ther
 * clone repo https://github.com/6eff/toy_robot
 * cd into root directory
 * run *bundle* (gem install bundle, if no bundle installed)
-* run * ruby lib/game.rb*
+* run *ruby lib/game.rb*
 * enjoy
 
 - PLACE will put the toy robot on the table in position `X`,`Y` and facing `NORTH`, `SOUTH`, `EAST` or
