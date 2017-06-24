@@ -8,7 +8,7 @@ class Toyrobot
   end
 
   def place_error tabletop
-    print "Please place you robot on tabletop of #{tabletop[:x_axe].last} X #{tabletop[:y_axe].last} units"
+    puts "\e[#{31}m#{"Please place you robot on tabletop of 0 to #{tabletop[:x_axe].last} on X axis and 0 to #{tabletop[:y_axe].last} on Y axis"}\e[0m"
   end
 
   def place coordinates, tabletop
@@ -32,16 +32,17 @@ class Toyrobot
       facing_reverse = @facing.reverse
       @coordinates[2] = facing_reverse[facing_reverse.index(@coordinates[2])-1]
     else
-      print "Check FACING spelling"
+      puts "\e[#{31}m#{"Check FACING spelling"}\e[0m"
     end
   end
 
   def error
-    print "Make a turn, you've reached the edge"
+    puts "\e[#{31}m#{"Make a turn, you've reached the edge"}\e[0m"
   end
 
   def move tabletop
-    case @coordinates[2]
+    if on_tabletop? tabletop
+      case @coordinates[2]
       when "north"
         @coordinates[1] += 1
         if on_tabletop? tabletop
@@ -74,6 +75,9 @@ class Toyrobot
           error
           @coordinates[0] += 1
         end
+      end
+    else
+      place_error tabletop
     end
   end
 
